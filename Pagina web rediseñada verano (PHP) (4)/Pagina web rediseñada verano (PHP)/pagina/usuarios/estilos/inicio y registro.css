@@ -1,0 +1,273 @@
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;/*Hago que todo el contenido se centre al medio de la pagina*/
+    text-align: center;
+    padding: 50px;
+    background-image: url(../../../imagenes/noticias.jpg);
+    background-repeat: no-repeat;/*La imagen no se repite*/
+    background-size: cover;/*La imagen se ajusta a la pagina*/
+    animation: aparecer 1s;/*Pequeña animacion al aparecer*/
+}
+@keyframes aparecer{
+    from{
+        transform: translateY(-1000px);/*Comienza desde la parte alta de la pagina*/
+    }
+    to{
+        transform: translateX(0);/*Termina en el medio*/
+    }
+}
+form{
+    background: rgb(255, 255, 255, 0.8);
+    border-radius: 10px;
+    width:400px;
+}
+.form{
+    width: 300px;
+}
+
+.imagenes{
+    display: flex;
+    justify-content:center;
+    gap: 10px;/*Separacion de los logos*/
+    padding: 30px;
+}
+.imagenes img{
+    width: 180px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);/**Un pequeño sombreado a los logos*/
+
+}
+.usuarios{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;/*Hago que los campos esten colocados por columnas*/
+    align-items: center;/*Con esta opcion consigo centrar los campos al medio del formulario*/
+    gap: 10px;
+}
+.usuarios input{
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    transition: 0.4s ease-in-out;/*Pequeña transicion al tener el raton por encima del campo de texto*/
+    border: none;
+    text-align: center;
+}
+.usuarios input:hover{
+    width: 100%;
+    border: solid 1px black;
+}
+.pulse{
+    padding: 10px 30px 10px;
+    border-radius: 20px;
+    width: 80%;
+    background: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.4s;/*Animacion al pasar el raton por encima del boton*/
+}
+
+.pulse:hover{
+    background-color: #FF5F6D;
+    box-shadow: 0 0 0 2em transparent;
+    animation: pulsa 0.5s; /*Animacion*/
+}
+
+@keyframes pulsa{
+    100%{
+        box-shadow: 0 0 0 0 #FF5F6D;
+    }
+}
+.linea-horizontal{
+    display: flex;
+    align-items: center;
+}
+.linea-horizontal::after,/*Con el after consigo realizar una linea horizontal a la derecha y con el before a la derecha dejando la palabra que la acompaña en el medio*/
+.linea-horizontal::before{
+    content: "";
+    flex: 1;
+    border-bottom: solid 1px black;
+    margin: 10px;
+}
+.enlace{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    margin-left: 40px;
+    border-radius: 20px;
+    margin-right: 40px;
+    border: solid 2px black;
+    transition: 0.4s;
+    cursor: pointer;
+}
+a{
+    color: black;
+    text-decoration: none;
+    width: 100%;
+}
+.enlace:active{
+    background-color: #FF5F6D;
+    box-shadow: 0 0 0 2em transparent;
+    animation: pulso 0.5s;
+}
+.enlace:hover{
+    color: yellow;
+    background-color: #FF5F6D;
+    box-shadow: 0 0 0 2em transparent;
+    animation: pulsa 0.5s;
+}
+.Redes {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+.faltante{
+   background-color: white;
+}
+li{
+    margin: 20px;
+    font-size: 40px;
+    padding: 15px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.35);
+    border-radius: 20px;
+    background: white;
+
+/*Animacion de facebook*/
+}
+.facebook{
+    transition: 0.5s ease-in-out;
+
+} 
+.fa-facebook{
+    color: black;
+    transition: 0.5s ease-in-out;
+
+
+}
+
+.facebook:hover{
+    background: rgb(0, 51, 255);
+    transform: translateY(-20px);
+
+}
+.fa-facebook:hover{
+color: rgb(255, 255, 255);
+
+
+}
+/*Animacion de twitter*/
+.twitter{
+    transition: 0.5s ease-in-out;
+
+} 
+.fa-x-twitter{
+    color: black;
+    transition: 0.5s ease-in-out;
+
+
+}
+
+.twitter:hover{
+    transform: translateY(-20px);
+    color: white;
+    background: rgb(0, 0, 0, 0.6);
+
+}
+.fa-x-twitter:hover{
+color: rgb(255, 255, 255);
+}
+
+/*Animacion Instagram*/
+.instagram{
+    transition: 0.5s ease-in-out;
+
+} 
+.fa-instagram{
+    color: black;
+    transition: 0.5s ease-in-out;
+
+
+}
+
+.instagram:hover{
+    transform: translateY(-20px);
+    color: white;
+    background: linear-gradient(to bottom, violet, orange);
+
+}
+.fa-instagram:hover{
+color: rgb(255, 255, 255);
+}
+@media (prefers-color-scheme: dark) {/*Esta funcion permite diseñar la pagina si el usuario tiene por defecto el estilo oscuro de la pagina al tener la configuracion de la pc en modo oscuro*/
+form{
+    background: rgb(52, 51, 51);
+
+}    
+form h1{
+    color: rgb(255, 255, 255);
+}
+.imagenes img{
+    width: 180px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.347);
+    box-shadow: 0 4px 8px rgb(255, 255, 255);/**Un pequeño sombreado a los logos*/
+
+}
+.pulse{
+    background: rgba(255, 255, 255, 0.385);
+    color: white;
+
+}
+.enlace{
+    background: rgba(255, 255, 255, 0.385);
+}
+.enlace a{
+    color: white;
+
+}
+.twitter:hover{
+    background: rgba(0, 0, 0, 0);
+}
+.instagram:hover{
+    background: rgba(0, 0, 0, 0);
+
+}
+p{
+    color: white;
+}
+}
+@media (max-width: 385px) {
+
+form{
+    background: rgb(255, 255, 255, 0.8);
+    border-radius: 10px;
+    width: 300px;
+    
+}
+form h1{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+.form{
+    width: 200px;
+}
+.imagenes img{
+    width: 110px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.347);
+    box-shadow: 0 4px 8px rgb(0, 0, 0);/**Un pequeño sombreado a los logos*/
+
+}
+.enlace a{
+    color: black;
+
+}
+.pulse{
+    background: rgba(255, 255, 255, 0.385);
+    color: rgb(0, 0, 0);
+
+}
+}

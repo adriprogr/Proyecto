@@ -1,0 +1,310 @@
+* {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    position: relative;
+}
+
+header::after,
+header::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(390deg, rgb(169, 96, 169), rgb(53, 149, 167), rgb(184, 148, 79));
+    border-radius: 10px;
+    z-index: -1;
+    transform-origin: left;
+    animation: animacion 1s ease-in-out;
+}
+
+header::after {
+    transform-origin: right;
+}
+
+@keyframes animacion {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+header nav {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+header img {
+    width: 180px;
+}
+
+.linea {
+    position: relative;
+}
+
+.linea::after,
+.linea::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    transform: scale(0);
+    transition: 0.4s ease;
+}
+
+.linea:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+.linea:hover::before {
+    transform: scale(1);
+    transform-origin: right;
+}
+
+.recuadro {
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.recuadro:hover {
+    color: rgb(0, 0, 0);
+}
+
+.recuadro::after,
+.recuadro::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    transform: scale(0);
+    transition: 0.6s;
+    z-index: -1;
+}
+
+.recuadro:hover::after {
+    transform: scale(1);
+    transform-origin: right;
+}
+
+.recuadro:hover::before {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+.texto {
+    text-align: center;
+}
+
+#categoria nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+#categoria nav::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    width: 40%;
+    height: 40px;
+    background: rgb(240, 235, 235);
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    border-radius: 10px;
+    z-index: -1;
+    animation: animacion 1s;
+    min-width: 400px;
+    transform-origin: top;
+    padding: 10px;
+}
+
+#categoria nav a {
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.corazon, .informativos, .gastronomia {
+    transition: 0.4s;
+    padding: 10px;
+}
+
+.corazon:hover {
+    background: rgb(252, 161, 245);
+    border-radius: 20px;
+    box-shadow: 0 0 0 2em transparent;
+    animation: corazon 0.8s;
+}
+
+@keyframes corazon {
+    50% {
+        box-shadow: 0 0 0 0 violet;
+    }
+}
+
+.informativos:hover {
+    background: rgb(120, 194, 224);
+    border-radius: 20px;
+    box-shadow: 0 0 0 2em transparent;
+    animation: informativos 0.8s;
+}
+
+@keyframes informativos {
+    50% {
+        box-shadow: 0 0 0 0 rgb(130, 231, 238);
+    }
+}
+
+.gastronomia:hover {
+    background: rgb(203, 224, 120);
+    border-radius: 20px;
+    box-shadow: 0 0 0 2em transparent;
+    animation: gastronomia 0.8s;
+}
+
+@keyframes gastronomia {
+    50% {
+        box-shadow: 0 0 0 0 rgb(222, 242, 47);
+    }
+}
+
+.cuerpo{
+    display: none;
+    background: white;
+    border-radius: 20px;
+    margin: 20px 30px 20px 30px;
+    animation: aparecer 1s;
+    
+
+}        
+.cuerpo:target{
+    display: block;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.noticias{
+    display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    gap: 25px;
+    padding:30px;
+    transition: 1s;
+    
+}   
+
+.mas_noticias{
+    display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+    gap: 25px;
+    padding:30px;
+    transition: 1s;
+    
+}   
+
+
+.noticia img {
+    
+    width: 100%;
+    height: 50%;
+    border-radius: 10px
+}
+.noticia{
+    background: rgba(128, 128, 128, 0.162);
+    overflow: hidden;
+    border-radius: 20px;
+    transition: 2s ;
+}
+
+.noticia:hover{
+    animation: transicion 2s infinite ease-in-out;
+}
+@keyframes transicion {
+    0%{
+        transform: translateY(0px);
+
+    }
+    25%{
+        transform: translateY(-10px);
+
+    }
+    50%{
+        transform: translateY(0px);
+
+    }
+    75%{
+        transform: translateY(-10px);
+
+    }
+    100%{
+        transform: translateY(0px);
+
+    }
+}
+.noticia h1 {
+font-size: 22px;
+}
+.noticia a{
+text-decoration:none;
+color: black;
+}
+
+
+@media (max-width: 1180px) {
+    .noticia h1 {
+font-size: 18px;
+}
+
+.noticia p {
+font-size: 14px;
+}
+
+.noticia {
+padding: 10px;
+}
+}

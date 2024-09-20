@@ -1,0 +1,336 @@
+::selection {
+    background-color: rgb(75, 170, 204);
+    color: rgb(99, 85, 85);
+    
+}
+body{
+    background: #275878;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   
+   
+}
+/* Consolidado y optimizado */
+
+header {
+display: flex;
+justify-content: space-around;
+padding: 10px;
+flex-wrap: wrap;
+position: relative;
+}
+
+header::before,
+header::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100px;
+background: rgba(0, 0, 0, 0.141);
+z-index: -1;
+transform-origin: left;
+animation: animacion 1s ease-in-out;
+border-radius: 20px;
+}
+
+header::after {
+transform-origin: right;
+}
+
+@keyframes animacion {
+from {
+transform: scale(0);
+}
+to {
+transform: scale(1);
+}
+}
+
+header img{
+    width: 180px;
+}
+nav{
+    padding: 20px;
+    display: flex;
+    
+
+}
+.linea{
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.4s;
+    position: relative;
+
+}
+.linea::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    transform: scale(0);
+    transform-origin: left;
+    transition: 0.4s ease
+
+    
+}
+.linea:hover::after{
+    transform: scale(1);
+}
+.linea::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    transform: scale(0);
+    transform-origin: right;
+    transition: 0.4s ease
+
+    
+}
+.linea:hover::before{
+    transform: scale(1);
+    
+}
+.recuadro{
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.4s;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+
+}
+.recuadro:hover{
+    color: rgb(0, 0, 0);
+}
+.recuadro::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 90%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    transform: scale(0);
+    transform-origin: left;
+    transition: 0.5s;
+    z-index: -1;
+
+}
+.recuadro:hover::after{
+    transform: scale(1);   
+    transform-origin: right;
+
+
+ 
+}
+.recuadro::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 90%;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    transform: scale(0);
+    transform-origin: left;
+    transition: 0.5s;
+    z-index: -1;
+
+}
+.recuadro:hover::before{
+    transform: scale(1);   
+    transform-origin: right;
+
+ 
+}
+.texto{
+    text-align: center;
+}
+.categorias{
+display: flex;/*Hacemos que todo el contenido este el centro de la pagina utilizando flex y flex-center*/
+justify-content: center;
+flex-wrap: wrap;/*Con flex-wrap hacemos que la pagina se acomode al tamaño de la ventana*/
+padding: 20px;
+gap: 30px;
+height: 150px;
+}
+.categoria1{
+width: 300px;
+overflow: hidden;/*Cuando se ample la imagen al pasar el raton por encima de ella esta no saldra del recuadro*/
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+padding: 10px;
+transition:0.5s ;/*Le pongo una transicion*/
+animation: primera 1s;
+
+
+
+}
+.categoria1:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.75);
+
+}
+
+.categorias .categoria1 img{
+width: 100%;
+border-radius: 10px;
+transition: 0.5s; /*Le pongo una transicion*/
+
+}
+.categoria1 img:hover{
+    transform: scale(1.1);
+}
+
+.categoria2{
+width: 300px;
+overflow: hidden;/*Cuando se ample la imagen al pasar el raton por encima de ella esta no saldra del recuadro*/
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+padding: 10px;
+transition:0.5s ;/*Le pongo una transicion*/
+animation: primera 3s;
+
+
+}
+.categoria2:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.75);
+
+}
+
+.categorias .categoria2 img{
+width: 100%;
+border-radius: 10px;
+transition: 0.5s; /*Le pongo una transicion*/
+
+}
+.categoria2 img:hover{
+    transform: scale(1.1);
+}
+
+@keyframes primera{
+    from{
+      opacity: 0;  
+    }
+    to{
+        opacity: 1;
+    }
+}
+.boton{
+padding: 15px 30px;
+font-size: 15px;
+border-radius: 20px;
+background: black;
+color: #00FFFF; 
+box-shadow: 0 0 10px #00FFFF;
+cursor: pointer;
+transition: 0.5s ease-in-out;
+display: inline-block;
+text-decoration: none;
+
+}
+.boton:hover{
+    animation: botar 0.5s;
+}
+/*Animacion para el boton*/
+@keyframes botar{
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@media (prefers-color-scheme: dark) {/*Esta funcion permite diseñar la pagina si el usuario tiene por defecto el estilo oscuro de la pagina al tener la configuracion de la pc en modo oscuro*/
+    body{
+        background: rgba(0, 0, 0, 0.868);
+    }
+}
+@media (max-width: 385px) {
+header nav a{
+font-size: 13px;
+}
+
+.categoria1{
+width: 200px;
+overflow: hidden;/*Cuando se ample la imagen al pasar el raton por encima de ella esta no saldra del recuadro*/
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+padding: 10px;
+transition:0.5s ;/*Le pongo una transicion*/
+animation: primera 1s;
+
+
+
+}
+.categoria2{
+width: 200px;
+overflow: hidden;/*Cuando se ample la imagen al pasar el raton por encima de ella esta no saldra del recuadro*/
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+padding: 10px;
+transition:0.5s ;/*Le pongo una transicion*/
+animation: primera 3s;
+
+
+
+}
+
+.recuadro{
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.4s;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+
+}
+.recuadro:hover{
+    color: rgb(0, 0, 0);
+}
+.recuadro::after{
+    
+    transition: 0.2s;
+   
+
+}
+
+.recuadro::before{
+   
+    transition: 0.2s;
+}
+   
+}

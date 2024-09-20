@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!--Necesario para implementar los iconos de las redes sociales-->
+    <link rel="stylesheet" href="../estilos/inicio y registro.css">
+</head>
+<body>
+    
+    <!--Formulario-->
+    <form method="POST" action="inicio de sesion.php">
+        <h1>Iniciar Sesion</h1>
+        <!--Logo de la pagina principal -->
+        <img class="form" src="../../../imagenes/Portal noticias.png">
+        <div class="imagenes">
+            <!--Logo de las paginas secundarias-->
+            <img src="../../../imagenes/pixelcut-export (5) (1) (1).png">
+            <img src="../../../imagenes/pixelcut-export (4) (1) (4).png">
+        </div>
+        <div class="usuarios"><!--Disposicion de los campos de texto--> <!--Required = es obligatorio(NOT NULL en PHP)-->
+            <input type="text" placeholder="Introduzca nombre de usuario" name="Nombre_usuario" id="usuario">
+            <input type="password" placeholder="Contraseña" name="Contraseña">
+        </div>
+        <input class="pulse" type="submit"value="Iniciar sesion" name="inicio" >
+        <!--Linea horizontal que la utilizo para dar al usuario la opcion de registrarse si no tiene una cuenta-->
+        <div class="linea-horizontal">
+            <p>o</p>
+        </div>
+        <div class="enlace">
+            <a href="registro.php">Registrarse</a>
+        </div>
+        <p>*El nombre de usuario debe tener mas de 5 caractares y menos de 25*</p>
+        <p>*La contraseña debe tener mas de 10 caracteres y menos 25*. Recomendable poner caracteres especiales</p>
+
+        <!--Iconos de las redes sociales-->
+        <ul class="Redes">
+            <li class="facebook"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li class="twitter"><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        
+    </form>
+</body>
+</html>
